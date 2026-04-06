@@ -1,4 +1,3 @@
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -53,9 +52,11 @@ public class playerbehavior : MonoBehaviour
         else
         {   
             direction.y = 0;
+       
         }
+        direction = direction.normalized;
     }
-        Direction = Direction.normalized;
+         
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + (direction * speed * Time.fixedDeltaTime));
